@@ -18,7 +18,6 @@ def landing_page(request):
     return render(request, "index.html", {})
 
 def sessional_login(request):
-    redirect_url = '/my/new/page'
     return render(request, "sessionalLogin.html", {})
 
 def validate_slogin(request):
@@ -69,10 +68,18 @@ def about_view(request):
 
 
 def permanent_login(request):
-    print(request.headers)
     return render(request, "permanentLogin.html", {})
 
-
+def validate_plogin(request):
+    if request.method == 'POST':
+        # Retrieve form data
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+        if username == 'abc' and password == 'abc':
+            token = createToken()
+            return render(request, 'pdashboard.html', {'data': token})
+        else:
+            return render(request, 'permanentLogin.html')
 @require_POST
 def entityRedirection(request):
 

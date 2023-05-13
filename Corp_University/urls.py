@@ -26,18 +26,22 @@ from corpU.views import (
     sessional_registrationForm,
     submit_form,
     sessional_dashboard,
-    validate_slogin
+    validate_slogin,
+    validate_plogin
+
 )
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('sessional_login', sessional_login, name="sessional_login"),
     path('', landing_page, name="home"),
-    path('entityRedirection', entityRedirection, name="home"),
-    path('permanent_login', permanent_login, name="home"),
-    path('about_view', about_view, name="home"),
-    path('sessional_registration', sessional_registrationForm, name="home"),
+    path('entityRedirection', entityRedirection, name="entityRedirection"),
+    path('permanent_login', permanent_login, name="permanent_login"),
+    path('about_view', about_view, name="about_view"),
+    path('sessional_registration', sessional_registrationForm, name="sessional_registrationForm"),
     path('submit_form', submit_form, name="submit_form"),
     path('sessional_dashboard', sessional_dashboard, name="sessional_dashboard"),
     path('validate_slogin', validate_slogin, name="validate_slogin"),
+    path('validate_plogin', validate_plogin, name="validate_plogin"),
+
 ]
