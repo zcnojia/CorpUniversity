@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<button id="sessional" type="button">Sessional</button>
+<button id="permanent" type="button">Permanent</button>
+</body>
+</html>
+
+
+<script>
+
+    $("button").click(function(e) {
+    e.preventDefault();
+    $.ajax({
+        type: "POST",
+        url: "/pages/test/",
+        data: {
+            id: $(this).val(), // < note u se of 'this' here
+            access_token: $("#access_token").val()
+        },
+        success: function(result) {
+            alert('ok');
+        },
+        error: function(result) {
+            alert('error');
+        }
+    });
+});
+
+</script>
