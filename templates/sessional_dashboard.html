@@ -5,4 +5,35 @@
 <h4>Sessional Dashboard</h4>
 
 
+
+<script>
+
+       // Assuming you have the JWT token available in the 'token' variable
+        var token = '{{ data }}';
+
+        // Define the cookie name and expiration time (optional)
+        var cookieName = 'jwtToken';
+        var expirationDays = 7; // Set the desired number of days
+
+        // Calculate the expiration date
+        var expirationDate = new Date();
+        expirationDate.setDate(expirationDate.getDate() + expirationDays);
+
+        // Create the cookie string
+        var cookieValue = encodeURIComponent(token) + '; expires=' + expirationDate.toUTCString() + '; path=/';
+
+        // Set the cookie
+        document.cookie = cookieName + '=' + cookieValue;
+
+        // Display a success message (optional)
+        console.log('JWT token saved in cookie successfully.');
+    </script>
+
+
+</script>
+
+
+
 </html>
+
+
