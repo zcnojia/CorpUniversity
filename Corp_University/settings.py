@@ -13,8 +13,16 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+
+
+
 
 
 # Quick-start development settings - unsuitable for production
@@ -82,21 +90,40 @@ WSGI_APPLICATION = 'Corp_University.wsgi.application'
 #         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+#
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': '',
+#         'USER': '',
+#         'PASSWORD': '',
+#         'HOST': 'ictstu-db1.cc.swin.edu.au',
+#         'OPTIONS': {
+#             'charset': 'utf8mb4',
+#         },
+#     }
+# }
+
 
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 's104310567_db',
-        'USER': 's104310567',
-        'PASSWORD': '070294',
-        'HOST': 'ictstu-db1.cc.swin.edu.au',
-        'PORT': '<port>',
+        'NAME': 'croupu',
+        'USER': 'user',
+        'PASSWORD': 'P@ssW0rd',
+        'HOST': 'localhost',  # Assuming your database is running locally
+        'PORT': '3306',  # MySQL default port
     }
 }
 
 
+
+
+
+
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
+
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -129,7 +156,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 
-STATIC_URL = 'static/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field

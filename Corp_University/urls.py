@@ -27,8 +27,9 @@ from corpU.views import (
     submit_form,
     sessional_dashboard,
     validate_slogin,
-    validate_plogin
-
+    validate_plogin,
+    permanent_dashboard,
+    add_course
 )
 
 urlpatterns = [
@@ -40,8 +41,10 @@ urlpatterns = [
     path('about_view', about_view, name="about_view"),
     path('sessional_registration', sessional_registrationForm, name="sessional_registrationForm"),
     path('submit_form', submit_form, name="submit_form"),
-    path('sessional_dashboard', sessional_dashboard, name="sessional_dashboard"),
+    path('sessional_dashboard/<str:param1>', sessional_dashboard, name="sessional_dashboard"),
     path('validate_slogin', validate_slogin, name="validate_slogin"),
     path('validate_plogin', validate_plogin, name="validate_plogin"),
+    path('permanent_dashboard/<str:param1>/', permanent_dashboard, name='permanent_dashboard'),
+    path('add_course', add_course, name='add_course'),
 
 ]
