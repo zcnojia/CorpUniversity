@@ -29,7 +29,11 @@ from corpU.views import (
     validate_slogin,
     validate_plogin,
     permanent_dashboard,
-    add_course
+    add_course,
+    sessional_assignment,
+    course_timetable,
+approve,
+mycourses
 )
 
 urlpatterns = [
@@ -46,5 +50,9 @@ urlpatterns = [
     path('validate_plogin', validate_plogin, name="validate_plogin"),
     path('permanent_dashboard/<str:param1>/', permanent_dashboard, name='permanent_dashboard'),
     path('add_course', add_course, name='add_course'),
+    path('sessional_assignment',sessional_assignment, name='sessional_assignment'),
+    path('course_timetable/<str:param1>/', course_timetable, name='course_timetable'),
+    path('approve', approve, name='approve'),
+    path('mycourses/<str:param1>/', mycourses, name='mycourses'),
 
 ]
